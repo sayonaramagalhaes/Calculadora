@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora</title> 
+    <style> 
+      *{  
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+        font-family: Arial, Helvetica, sans-serif;
+        
+        
+        
+      } 
+      body{ 
+        background-color: #F5F5F5;
+    color: #555;
+    font-size: 1.1em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    line-height: 30px;
+         
+
+
+
+
+      }  
+
+
+        
+
+      h1{  
+        color: blueviolet;
+       text-align: center;
+
+      } 
+      h2{  
+        color: blueviolet;
+       text-align: center;
+
+      }
+       p{ 
+        text-align: center; 
+        color: grey;
+        font-family: Arial, Helvetica, sans-serif;
+       }
+
+
+    </style> 
+
+</head>
+<body>  
+         
+    <h1>Calculadora Simples</h1>
+    <p> 
+    
+    </p>
+    Primeiro Número <br/> 
+    <input id ="n1" type="number"/><br/> 
+    Segundo Número <br/>
+   <input id ="n2" type="number"/><br /><br/> 
+    <button onclick="somar()">Somar</button> 
+    <button onclick="subtrair()">Subtrair</button> 
+    <button onclick="multiplicar()">Multiplicar</button> 
+    <button onclick="dividir()">Dividir</button>  
+    <br/><br/> 
+       Resultado <span></span>
+  
+    <script>  
+
+        var n1 = document.querySelector('#n1')
+        var n2 = document.querySelector('#n2') 
+        var resultado = document.querySelector('span')
+         
+        function somar(){ 
+        resultado.innerHTML = parseFloat(n1.value) + parseFloat(n2.value)
+        }
+         
+        function subtrair(){ 
+        resultado.innerHTML = parseFloat(n1.value) - parseFloat(n2.value)
+        } 
+
+        function multiplicar(){ 
+        resultado.innerHTML = parseFloat(n1.value) * parseFloat(n2.value)
+        }
+         
+        function dividir(){ 
+        resultado.innerHTML = parseFloat(n1.value) / parseFloat(n2.value)
+        }
+
+    </script>
+ 
+     
+    <br/><br/><h2> Calculadora de Média</h2> 
+
+        <input type="number" max="10" id="nota1" 
+        placeholder="Insira a primeira nota">    
+        
+        <input type="number" max="10" id="nota2" 
+        placeholder="Insira a segunda nota">  
+
+        <input type="number" max="10" id="nota3" 
+        placeholder="Insira a terceira nota">  
+         <button id="calcular" onclick ="calcular()">Calcular</button>
+               
+         <p> A sua média é : <span id="media" ></span></p>
+         <p id="status"></p> 
+
+
+       <script>
+            function calcular(){ 
+                    var p1, p2, p3, media; 
+                     
+                p1= document.getElementById('nota1').value; 
+                 
+                p2=document.getElementById('nota2').value; 
+
+                p3=document.getElementById('nota3').value;
+                     
+                    media= (parseFloat(p1) + parseFloat(p2) + parseFloat(p3))/3
+                        
+                    document.getElementById('media').innerHTML=media 
+                        
+                        if (media<7){ 
+                            document.getElementById('status').innerHTML= 
+                            "Reprovado! tente novamente próximo semestre."
+                            
+                        } else{ 
+                              
+                            document.getElementById('status').innerHTML=  
+                            "Aprovado, Parabéns! "
+
+                        }
+
+
+            }
+
+        </script>
+
+
+ 
+</body>
+</html>
